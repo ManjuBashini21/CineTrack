@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Movie Library</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #000;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+      color: #fff;
+    }
+
+    .navbar-dark .navbar-toggler-icon {
+      background-color: #fff;
+    }
+
+    .hero-section {
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+
+    .hero-section img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+
+    .hero-btn {
+      background-color: #ff4500;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+
+    .section-title {
+      margin-top: 50px;
+    }
+
+    .card {
+      background-color: #333;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px; /* Fixed height */
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">Movie Library</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Search</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Filter</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Profile
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Login</a>
+            <a class="dropdown-item" href="#">Signup</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <img src="/images/desktop-wallpaper-movie-theater-background-movie-cinema.jpg" alt="Hero Image">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Welcome to Movie Library</h1>
+      <p>Discover the latest and greatest movies</p>
+      <button class="hero-btn">Explore Now</button>
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="section-title">Featured Movies</h2>
+      </div>
+    </div>
+    <div class="row">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="/images/Action_Tamil_Film.jpg" class="card-img-top" alt="Movie 1">
+          <div class="card-body">
+            <h5 class="card-title">Movie Title 1</h5>
+            <p class="card-text">Description of the movie.</p>
+            <a href="#" class="btn btn-primary">Watch Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="/images/IMAGE_1683795621.jpg" class="card-img-top" alt="Movie 2">
+          <div class="card-body">
+            <h5 class="card-title">Movie Title 2</h5>
+            <p class="card-text">Description of the movie.</p>
+            <a href="#" class="btn btn-primary">Watch Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="/images/images.jpg" class="card-img-top" alt="Movie 3">
+          <div class="card-body">
+            <h5 class="card-title">Movie Title 3</h5>
+            <p class="card-text">Description of the movie.</p>
+            <a href="#" class="btn btn-primary">Watch Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

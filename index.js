@@ -32,6 +32,23 @@ app.post('/register' , (req,res) => {
 })
 
 
+app.post('/login' , (req,res) => {
+    const {email,password} = req.body
+    console.log(email,password)
+
+    db.run(
+        'INSERT INTO auth (name,age,email,password) VALUES (?,?,?,?)',
+        [password,email],
+        (err)=>{
+            if(err){
+            return res.render('login',{error:'Registration Failed.Email is already Exist'})
+        }
+        res.redirect('/')
+    }
+    )
+})
+
+
 app.get('/',(req,res)=>{
     res.render('index', {message:'hello'})
 })

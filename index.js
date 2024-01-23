@@ -50,7 +50,23 @@ app.post('/login' , (req,res) => {
 
 
 app.get('/',(req,res)=>{
-    res.render('index', {message:'hello'})
+    res.render('index')
+})
+
+app.get('/login',(req,res)=>{
+    res.render('login')
+})
+
+app.get('/register',(req,res)=>{
+    res.render('register')
+})
+
+app.get('/readmore',(req,res)=>{
+    res.render('readmore')
+})
+
+app.get('/form',(req,res)=>{
+    res.render('form')
 })
 
 

@@ -21,7 +21,7 @@ app.post('/register' , (req,res) => {
 
     db.run(
         'INSERT INTO auth (name,age,email,password) VALUES (?,?,?,?)',
-        [name,age,email,password],
+        [name,age,password,email],
         (err)=>{
             if(err){
             return res.render('register',{error:'Registration Failed.Email is already Exist'})

@@ -1,0 +1,43 @@
+<!-- filter.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>CineTrac - Filtered Results</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+
+  <!-- Display filtered results -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="section-title">Filtered Movies</h2>
+      </div>
+    </div>
+    <div class="row">
+      <% filterResults.forEach(movie => { %>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="<%= movie.image %>" class="card-img-top" alt="<%= movie.title %>">
+            <div class="card-body">
+              <h5 class="card-title"><%= movie.title %></h5>
+              <p class="card-text"><%= movie.description %></p>
+              <a href="/readmore/<%= movie.id %>" class="btn btn-primary">Read More</a> 
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

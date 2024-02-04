@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Signup - Movie Library</title>
+  <title>Login - Movie Library</title>
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background-image: url('login-background.jpg'); /* Replace with your login background image URL */
+      background-image: url('/images/desktop-wallpaper-movie-theater-background-movie-cinema.jpg'); /* Replace with your login background image URL */
       background-size: cover;
       background-position: center;
       color: #fff;
       padding: 100px 0;
     }
 
-    .signup-container {
+    .login-container {
       background-color: rgba(0, 0, 0, 0.7);
       padding: 20px;
       border-radius: 10px;
@@ -29,21 +29,40 @@
 </head>
 <body>
 
-  <!-- Signup Form -->
+  <!-- Login Form -->
   <div class="container">
+
     <div class="row justify-content-center">
+
       <div class="col-md-4">
-        <div class="signup-container">
-          <h2>Sign Up</h2>
-          <form>
+
+        <div class="login-container">
+
+          <h2>Register</h2>
+
+          <form action="/register" method="post">
+
+
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Username" required>
+              <input type="text" class="form-control" placeholder="Username" id="name" name="name" required>
             </div>
+
             <div class="form-group">
-              <input type="password" class="form-control" placeholder="Password" required>
+              <input type="number" class="form-control" placeholder="Age" id="age" name="age" required>
             </div>
-            <button type="submit" class="btn btn-primary">Sign Up</button>
+
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="Password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Email" id="email" name="email" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Register</button>
+
           </form>
+          
         </div>
       </div>
     </div>

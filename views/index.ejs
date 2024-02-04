@@ -22,18 +22,21 @@
           <a class="nav-link" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Search</a>
+          <form action="/search" method="get" class="form-inline mt-3">
+            <input type="text" name="q" class="form-control mr-2" placeholder="Search by Title">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Filter</a>
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#filterModal">Filter</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Profile
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/register">Register</a>
             <a class="dropdown-item" href="/login">Login</a>
-            <a class="dropdown-item" href="/register">Signup</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Logout</a>
           </div>
@@ -42,9 +45,34 @@
     </div>
   </nav>
 
+
+  <!-- Filter Modal -->
+<div class="modal" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="filterModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="filterModalLabel">Filter Movies</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Filter Form -->
+        <form action="/filter" method="get" class="form-inline mt-3">
+          <input type="text" name="title" class="form-control mr-2" placeholder="Filter by Title">
+          <input type="text" name="genre" class="form-control mr-2" placeholder="Filter by Genre">
+          <input type="text" name="releaseYear" class="form-control mr-2" placeholder="Filter by Release Year">
+          <input type="text" name="director" class="form-control mr-2" placeholder="Filter by Director">
+          <button type="submit" class="btn btn-primary">Filter</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
   <!-- Hero Section -->
   <div class="hero-section">
-    <img src="/images/desktop-wallpaper-movie-theater-background-movie-cinema.jpg" alt="Hero Image">
+    <img src="/images/download.jpg" alt="Hero Image">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Welcome to CineTrac</h1>
@@ -53,7 +81,6 @@
     </div>
   </div>
 
-  <!-- Content Section -->
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -61,41 +88,21 @@
       </div>
     </div>
     <div class="row">
-      <!-- Card 1 -->
-      <div class="col-md-4">
-        <div class="card">
-          <img src="/images/look__movies_delayed_due_to_the_coronavirus_black_widow_1586253022.jpg" class="card-img-top" alt="Movie 1">
-          <div class="card-body">
-            <h5 class="card-title">Black Widow</h5>
-            <p class="card-text">Black Widow, portrayed by Scarlett Johansson, is a highly skilled Marvel superhero and former spy known for her exceptional combat abilities and complex, mysterious past.</p>
-            <a href="readmore" class="btn btn-primary">Read More</a>
+      <% catalog.forEach(movie => { %>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="<%= movie.image %>" class="card-img-top" alt="<%= movie.title %>">
+            <div class="card-body">
+              <h5 class="card-title"><%= movie.title %></h5>
+              <p class="card-text"><%= movie.description %></p>
+              <a href="/readmore/<%= movie.id %>" class="btn btn-primary">Read More</a> 
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="col-md-4">
-        <div class="card">
-          <img src="/images/IMAGE_1683795621.jpg" class="card-img-top" alt="Movie 2">
-          <div class="card-body">
-            <h5 class="card-title">Evil Dead Rise</h5>
-            <p class="card-text">Evil Dead Rise is a horror film that is part of the Evil Dead franchise, featuring a new cast and storyline, continuing the legacy of supernatural horror and demonic forces unleashed by the Necronomicon.</p>
-            <a href="/readmore" class="btn btn-primary">Read More</a>
-          </div>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="col-md-4">
-        <div class="card">
-          <img src="/images/images.jpg" class="card-img-top" alt="Movie 3">
-          <div class="card-body">
-            <h5 class="card-title">Love Today</h5>
-            <p class="card-text">Love Today is a romantic film that explores the complexities of modern relationships, following the intertwining lives of characters as they navigate love, heartbreak, and self-discovery.</p>
-            <a href="/readmore" class="btn btn-primary">Read More</a>
-          </div>
-        </div>
-      </div>
+      <% }); %>
     </div>
   </div>
+
 
   <!-- Bootstrap JS and Popper.js -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -103,3 +110,4 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
+

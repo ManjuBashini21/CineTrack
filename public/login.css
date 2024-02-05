@@ -1,0 +1,18 @@
+body {
+    background-image: url('/images/download.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0;
+}
+
+.signup-container {
+ background-color: rgba(0, 0, 0, 0.7);
+ padding: 20px;
+ border-radius: 10px;
+ text-align: center;
+}
+
+.form-group {
+ margin-bottom: 20px;
+}

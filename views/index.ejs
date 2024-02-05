@@ -1,113 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>CineTrac - Home</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/index.css">
-</head>
+
+<%- include('./partials/header.ejs') %>
+
+
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="#">CineTrac</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <form action="/search" method="get" class="form-inline mt-3">
-            <input type="text" name="q" class="form-control mr-2" placeholder="Search by Title">
-            <button type="submit" class="btn btn-primary">Search</button>
-          </form>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" data-toggle="modal" data-target="#filterModal">Filter</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Profile
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/register">Register</a>
-            <a class="dropdown-item" href="/login">Login</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Logout</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  
+  <%- include('./partials/nav.ejs') %>
 
 
-  <!-- Filter Modal -->
-<div class="modal" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="filterModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="filterModalLabel">Filter Movies</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <!-- Filter Form -->
-        <form action="/filter" method="get" class="form-inline mt-3">
-          <input type="text" name="title" class="form-control mr-2" placeholder="Filter by Title">
-          <input type="text" name="genre" class="form-control mr-2" placeholder="Filter by Genre">
-          <input type="text" name="releaseYear" class="form-control mr-2" placeholder="Filter by Release Year">
-          <input type="text" name="director" class="form-control mr-2" placeholder="Filter by Director">
-          <button type="submit" class="btn btn-primary">Filter</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <!-- Hero Section -->
   <div class="hero-section">
+
+
     <img src="/images/download.jpg" alt="Hero Image">
+
     <div class="hero-overlay"></div>
+
     <div class="hero-content">
+
       <h1>Welcome to CineTrac</h1>
       <p>Discover the latest and greatest movies</p>
-      <a href="/form"><button class="hero-btn">Catalog</button></a>
+      <a href="/form"><button class="hero-btn">Create Catalog</button></a>
+
     </div>
+
+
   </div>
 
+
+  
   <div class="container">
+
+
     <div class="row">
+
       <div class="col-md-12">
         <h2 class="section-title">Featured Movies</h2>
       </div>
+
     </div>
+
+
     <div class="row">
+
       <% catalog.forEach(movie => { %>
+
         <div class="col-md-4">
+
           <div class="card">
+
             <img src="<%= movie.image %>" class="card-img-top" alt="<%= movie.title %>">
+
             <div class="card-body">
+
               <h5 class="card-title"><%= movie.title %></h5>
-              <p class="card-text"><%= movie.description %></p>
               <a href="/readmore/<%= movie.id %>" class="btn btn-primary">Read More</a> 
+
             </div>
+
           </div>
+
         </div>
+
       <% }); %>
+
     </div>
+
   </div>
 
 
-  <!-- Bootstrap JS and Popper.js -->
+
+ 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+ 
+  
 </body>
 </html>
 

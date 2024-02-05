@@ -35,12 +35,23 @@ const db = new sqlite3.Database('./db/moviedb.db')
 const db1 = new sqlite3.Database('./db/catalog.db')
 
 
+
+//login and register route 
+
+app.get('/login',(req,res)=>{
+  res.render('login')
+})
+
+app.get('/register',(req,res)=>{
+  res.render('register')
+})
+
+
 // Authendication functionalities
 app.post('/register',(req,res)=>{
     const {name,age,email,password} = req.body
 
     console.log(name,age,email,password)
-    console.log("poona kutty");
 
     db.run(
         'INSERT INTO moviedb (name,age,email,password) VALUES (?,?,?,?)',
@@ -72,11 +83,10 @@ app.post('/login',(req,res)=>{
 })
 
 
-
+//CREATE
 app.post('/submit-movie', upload.single('image'), (req, res) => {
     const { title, director, releaseYear, genre, description } = req.body;
     const image = req.file ? `/images/${req.file.filename}` : null; 
-    console.log("poona kutty");
   
     db1.run(
       'INSERT INTO catalog (title, director, releaseYear, genre, description, image) VALUES (?, ?, ?, ?, ?, ?)',
@@ -97,36 +107,22 @@ app.post('/submit-movie', upload.single('image'), (req, res) => {
 
 
 //index route
-  app.get('/', (req, res) => {
+app.get('/', (req, res) => {
     db1.all('SELECT * FROM catalog', (err, catalog) => {
       if (err) {
         console.error(err);
-        console.log("poona kutty");
         return res.status(500).send('Internal Server Error');
       }
       console.log('Catalog:', catalog);
       res.render('index', { catalog });
     });
-  });
+});
 
   
 
-//login and register route 
-
-app.get('/login',(req,res)=>{
-    res.render('login')
-    console.log("poona kutty");
-})
-
-app.get('/register',(req,res)=>{
-    res.render('register')
-    console.log("kutty");
-})
 
 
-
-
-//readmore route
+//READ
 app.get('/readmore/:id', (req, res) => {
   const movieId = req.params.id;
 
@@ -149,7 +145,7 @@ app.get('/form',(req,res)=>{
 
 
 
-// delete route
+//DELETE
 app.get('/delete/:id', (req, res) => {
   const movieId = req.params.id;
 
@@ -165,7 +161,7 @@ app.get('/delete/:id', (req, res) => {
 
 
 
-//update route
+//UPDATE
 app.get('/update/:id', (req, res) => {
   const movieId = req.params.id;
   
@@ -202,7 +198,7 @@ app.post('/update/:id', upload.single('image'),  (req, res) => {
 });
 
 
-// Search route
+//SEARCH
 app.get('/search', (req, res) => {
   const query = req.query.q; // Assuming 'q' is the query parameter
   
@@ -218,7 +214,7 @@ app.get('/search', (req, res) => {
 
 
 
-// Filter route
+//FILTER
 app.get('/filter', (req, res) => {
   const { title, genre, releaseYear, director } = req.query;
   const filterConditions = [];
@@ -252,6 +248,8 @@ app.get('/filter', (req, res) => {
     res.render('filter', { filterResults, title, genre, releaseYear, director });
   });
 });
+
+
 
 
 

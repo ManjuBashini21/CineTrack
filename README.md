@@ -102,5 +102,5 @@ The application is designed to be responsive, ensuring a consistent experience a
 1. Clone the repository
 2. Install dependencies: `npm install`
 3. Start the application: `nodemon index`
-4. Visit `http://localhost:3000` in your browser.
+4. Visit `http://localhost:3000/` in your browser.
 

@@ -31,7 +31,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 //db config
-const db = new sqlite3.Database('./db/moviedb.db')
 const db1 = new sqlite3.Database('./db/catalog.db')
 
 
@@ -53,7 +52,7 @@ app.post('/register',(req,res)=>{
 
     console.log(name,age,email,password)
 
-    db.run(
+    db1.run(
         'INSERT INTO moviedb (name,age,email,password) VALUES (?,?,?,?)',
         [name,age,email,password],
         (err)=>{
@@ -71,7 +70,7 @@ app.post('/login',(req,res)=>{
     console.log(email,password)
     
 
-    db.get('SELECT * FROM moviedb WHERE email = ? AND password = ?',
+    db1.get('SELECT * FROM moviedb WHERE email = ? AND password = ?',
         [email,password],
         (err,user)=>{
             if(err || !user){

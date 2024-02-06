@@ -21,24 +21,36 @@ CineTrac is designed to make movie management and discovery easy. Users can view
 
 ## Tech Stack
 
-- **Frontend**: HTML, CSS, Bootstrap, EJS (Embedded JavaScript templates)
+- **Frontend**: HTML, CSS, Bootstrap, EJS 
 - **Backend**: Node.js, Express.js
-- **Database**: SQLite (you can easily switch to another database like PostgreSQL or MySQL)
-- **Session Management**: express-session
+- **Database**: SQLite 
 - **File Uploads**: multer
 
-![WhatsApp Image 2024-02-05 at 9 07 31 PM](https://github.com/kiddoGirl/Tech-Titans---Movie-Booking-App/assets/103051896/75e9c30d-c068-41c8-b825-10917b167584)
-
-![WhatsApp Image 2024-02-05 at 9 07 00 PM](https://github.com/kiddoGirl/Tech-Titans---Movie-Booking-App/assets/103051896/9a9f4767-14ea-4b0c-a547-865b2077f0e5)
+![WhatsApp Image 2024-02-06 at 7 50 00 PM](https://github.com/kiddoGirl/Tech-Titans---Movie-Booking-App/assets/103051896/99d07c3b-93c1-435e-90ea-cd3c323f81bd)
 
 
 ## Features
+
+### CineTrac includes user authentication features:
+
+- **Register**: Users can create accounts by providing a username,password,mail and age.
+
+![WhatsApp Image 2024-02-06 at 7 53 00 PM](https://github.com/kiddoGirl/Tech-Titans---Movie-Booking-App/assets/103051896/ff02065d-3835-4fa7-99e2-5e8439fc3045)
+
+![WhatsApp Image 2024-02-06 at 7 53 23 PM](https://github.com/kiddoGirl/Tech-Titans---Movie-Booking-App/assets/103051896/2381c854-4e4b-4b64-b262-47b09aa88654)
+
+- **Login**: Registered users can log in to access personalized features.
+
+![WhatsApp Image 2024-02-06 at 7 53 46 PM](https://github.com/kiddoGirl/Tech-Titans---Movie-Booking-App/assets/103051896/bac1763e-9adf-4fc1-a6b5-4e83d47a9c55)  
 
 ### CRUD Operations
 
 CineTrac supports basic CRUD (Create, Read, Update, Delete) operations for managing movies.
 
 - **Create**: Add new movies with details such as title, director, release year, genre, description, and an image.
+
+![WhatsApp Image 2024-02-06 at 7 48 46 PM](https://github.com/kiddoGirl/Tech-Titans---Movie-Booking-App/assets/103051896/3c751df0-c187-4e1e-9b58-6b4cd59df9dc)
+  
 - **Read**: View a list of featured movies with their details. Click on "Read More" to view a specific movie's detailed information.
 
 ![WhatsApp Image 2024-02-05 at 9 12 29 PM](https://github.com/kiddoGirl/Tech-Titans---Movie-Booking-App/assets/103051896/c6455837-3d1f-4d50-bbb3-0f3841ba607a)
@@ -48,6 +60,9 @@ CineTrac supports basic CRUD (Create, Read, Update, Delete) operations for manag
   ![WhatsApp Image 2024-02-05 at 9 13 36 PM](https://github.com/kiddoGirl/Tech-Titans---Movie-Booking-App/assets/103051896/b53b1885-c771-40e1-9d02-4dfd168baa87)
 
 - **Delete**: Remove movies from the catalog.
+
+  ![WhatsApp Image 2024-02-06 at 7 50 57 PM](https://github.com/kiddoGirl/Tech-Titans---Movie-Booking-App/assets/103051896/ae5f8a4b-0c18-4362-8662-faf0560b27c7)
+
 
 ### Search
 
@@ -78,11 +93,14 @@ Users can filter movies based on different criteria:
 
 The application is designed to be responsive, ensuring a consistent experience across various devices. You can test the responsiveness using browser developer tools or real devices of different sizes.
 
+![WhatsApp Image 2024-02-06 at 7 52 08 PM](https://github.com/kiddoGirl/Tech-Titans---Movie-Booking-App/assets/103051896/16461bac-f137-49b5-be9f-4faaf91e81ec)
+
+
 
 ## Getting Started
 
 1. Clone the repository
 2. Install dependencies: `npm install`
-3. Start the application: `npm start`
+3. Start the application: `nodemon index`
 4. Visit `http://localhost:3000` in your browser.
 
